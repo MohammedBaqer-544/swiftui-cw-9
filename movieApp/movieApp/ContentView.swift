@@ -39,10 +39,10 @@ struct movieRow: View {
             
             VStack(alignment: .leading) {
                 Text(movieName)
-                    .font(.largeTitle)
+                    .font(.custom("AndikaNewBasic-Bold", size: 34))
                 
                 Text(movieCharachters.joined(separator: ", "))
-                
+                    .font(.custom("(A) Arslan Wessam A (A) Arslan Wessam A", size: 30))
                 
             }
         }
