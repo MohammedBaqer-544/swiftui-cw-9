@@ -20,6 +20,7 @@ struct ContentView: View {
             }
             .navigationBarTitle("Movies")
         }
+        .accentColor(.white)
     }
 }
 

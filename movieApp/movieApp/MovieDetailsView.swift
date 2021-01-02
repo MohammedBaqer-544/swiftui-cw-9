@@ -13,14 +13,7 @@ struct MovieDetailsView: View {
     
     var body: some View {
         ZStack {
-            Group {
-                Image(movie.name)
-                    .resizable()
-                    .scaledToFill()
-                    .blur(radius: 40)
-                Color.black.opacity(0.3)
-            }
-            .ignoresSafeArea()
+            MovieBG(movie: movie)
 
             VStack(alignment: .center) {
                 Image(movie.name)
@@ -36,11 +29,18 @@ struct MovieDetailsView: View {
                 Text(movie.characters.joined(separator: ", "))
                     .font(.custom("(A) Arslan Wessam A (A) Arslan Wessam A", size: 40))
                 
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(movie.characters, id: \.self){ (character: String) in Image(character).resizable().scaledToFit().frame(width: 200)
+                        }
+                    }
+                }
+                
                 Spacer()
             }
             .padding(.vertical)
             .foregroundColor(.white)
-            .shadow(radius: 8)
+//            .shadow(radius: 8)
         }
     }
 }
@@ -48,5 +48,20 @@ struct MovieDetailsView: View {
 struct MovieDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         MovieDetailsView(movie: Movie(name: "Harry Potter", characters: ["Daniel", "Rupert", "Emma"]))
+    }
+}
+
+struct MovieBG: View {
+    var movie: Movie
+    
+    var body: some View {
+            Color.black.opacity(0.3)
+                .background(
+                    Image(movie.name)
+                        .resizable()
+                        .scaledToFill()
+                        .blur(radius: 40)
+                )
+                .edgesIgnoringSafeArea(.all)
     }
 }
