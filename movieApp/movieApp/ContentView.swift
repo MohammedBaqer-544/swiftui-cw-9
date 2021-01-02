@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        List {
-            movieRow(movieName: "Harry Potter", movieCharachters: ["Daniel", "Rupert", "Emma"])
-            movieRow(movieName: "Interstellar", movieCharachters: ["Matthew", "Anne", "Jessica"])
-            movieRow(movieName: "Passengers", movieCharachters: ["Chris", "Jennifer", "Michael"])
-            
+        NavigationView {
+            List(movies) { movie in 
+                NavigationLink(destination: MovieDetailsView(movie: movie),
+                               label: {
+                                movieRow(movie: movie)
+                               })
+                
+            }
+            .navigationBarTitle("Movies")
         }
     }
 }
@@ -25,24 +30,23 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct movieRow: View {
-    
-    let movieName: String
-    let movieCharachters: [String]
+    let movie: Movie
     
     var body: some View {
         HStack(alignment: .center) {
-            Image(movieName)
+            Image(movie.name)
                 .resizable()
                 .scaledToFit()
                 .clipShape(Circle())
+                .overlay(Circle().stroke(Color.black, lineWidth: 1))
                 .frame(width: 150.0, height: 150.0)
             
             VStack(alignment: .leading) {
-                Text(movieName)
-                    .font(.custom("AndikaNewBasic-Bold", size: 34))
+                Text(movie.name)
+                    .font(.custom("AndikaNewBasic-Bold", size: 31))
                 
-                Text(movieCharachters.joined(separator: ", "))
-                    .font(.custom("(A) Arslan Wessam A (A) Arslan Wessam A", size: 30))
+                Text(movie.characters.joined(separator: ", "))
+                    .font(.custom("(A) Arslan Wessam A (A) Arslan Wessam A", size: 29))
                 
             }
         }

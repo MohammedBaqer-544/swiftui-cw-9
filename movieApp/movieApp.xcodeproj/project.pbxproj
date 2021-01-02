@@ -33,6 +33,8 @@
 		766509BB259BB513004E3053 /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 766509A5259BB513004E3053 /* Montserrat-BlackItalic.ttf */; };
 		766509BC259BB513004E3053 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 766509A6259BB513004E3053 /* Montserrat-Italic.ttf */; };
 		766509BD259BB513004E3053 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 766509A7259BB513004E3053 /* Montserrat-SemiBoldItalic.ttf */; };
+		76CB400525A0E14400930909 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB400425A0E14400930909 /* MovieDetailsView.swift */; };
+		76CB400925A0EF1200930909 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB400825A0EF1200930909 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		766509A5259BB513004E3053 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
 		766509A6259BB513004E3053 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		766509A7259BB513004E3053 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		76CB400425A0E14400930909 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		76CB400825A0EF1200930909 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +100,10 @@
 		7665097F259BB0CE004E3053 /* movieApp */ = {
 			isa = PBXGroup;
 			children = (
+				76CB400725A0EEB200930909 /* Models */,
 				76650980259BB0CE004E3053 /* movieAppApp.swift */,
 				76650982259BB0CE004E3053 /* ContentView.swift */,
+				76CB400425A0E14400930909 /* MovieDetailsView.swift */,
 				76650984259BB0CF004E3053 /* Assets.xcassets */,
 				76650989259BB0CF004E3053 /* Info.plist */,
 				76650990259BB513004E3053 /* fonts */,
@@ -149,6 +155,14 @@
 				766509A1259BB513004E3053 /* Montserrat-Regular.ttf */,
 			);
 			path = "Arabic ";
+			sourceTree = "<group>";
+		};
+		76CB400725A0EEB200930909 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				76CB400825A0EF1200930909 /* Movie.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +256,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76CB400525A0E14400930909 /* MovieDetailsView.swift in Sources */,
 				76650983259BB0CE004E3053 /* ContentView.swift in Sources */,
+				76CB400925A0EF1200930909 /* Movie.swift in Sources */,
 				76650981259BB0CE004E3053 /* movieAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
